@@ -1,0 +1,124 @@
+
+input[type=text], input[type=email], input[type=password], input[type=tel], input[type=number], input[type=search], input[type=file], textarea {
+    & { padding:5px 0; color:$black; background:transparent; width:100%; @include text-big; line-height:100%!important; border:none; border-radius:0; border-top:2px solid transparent; border-bottom:2px solid $black; }
+    &:focus { border-bottom-color:$black; border-top-color:transparent; box-shadow:none; background:transparent; }
+    &::placeholder { color:$grey; }
+    &::-webkit-file-upload-button { visibility:hidden; width:0px!important; padding:0!important; border:0!important; }
+}
+
+.hnav { 
+    & { @include hspace; border-bottom:1px solid $grey-light; }
+    & a { 
+        & { padding-bottom:10px; padding-top:10px; margin:0 20px; color:$black; display:inline-block; line-height:100%!important; }
+        &:hover { color:$blue; }
+        &.active { color:$blue; border-bottom:2px solid $blue; @include font-medium; }
+    }
+}
+
+.btn {
+    & { background:transparent; border:2px solid $black; padding:$btn; @include text-btn; line-height:100%!important; color:$black; border-radius:$radius; }
+    &:not(.no-hover):hover, &:not(.no-hover):active { background:$black; border-color:$black; color:#fff; }
+    &.active { 
+        & { background:$black; color:#fff; }
+        &:hover, &:active { background:rgba($black, 80%); border-color:transparent; }
+    }
+    
+    &.btn-blue {
+        & { color:$blue; background:transparent; border:2px solid $blue; }
+        &:hover, &:active { background:$blue; border-color:$blue; color:#fff; }
+        &.active { 
+            & { background:$blue; color:#fff; }
+            &:hover, &:active { background:lighten($blue, 5%); border-color:transparent; }
+        }
+    }
+    
+    &.btn-grey {
+        & { background:transparent; border:2px solid $grey; color:$grey; }
+        &:hover, &:active { background:$grey; border-color:$grey; color:#fff; }
+        &.active { 
+            & { background:$grey; color:#fff; }
+            &:hover, &:active { background:lighten($grey, 5%); border-color:transparent; }
+        }
+    }
+    
+    &.btn-red {
+        & { background:transparent; border:2px solid $red; color:$red; }
+        &:hover, &:active { background:$red; border-color:$red; color:#fff; }
+        &.active { 
+            & { background:$red; color:#fff; }
+            &:hover, &:active { background:lighten($red, 5%); border-color:transparent; }
+        }
+    }
+    
+    &.btn-green {
+        & { background:transparent; border:2px solid $green; color:$green; }
+        &:hover, &:active { background:$green; border-color:$green; color:#fff; }
+        &.active { 
+            & { background:$green; color:#fff; }
+            &:hover, &:active { background:lighten($green, 5%); border-color:transparent; }
+        }
+    }
+    
+    &.btn-white {
+        & { background:transparent; border:2px solid #fff; color:#fff; }
+        &:hover, &:active { background:#fff; border-color:#fff; color:$black; }
+        &.active { 
+            & { background:#fff; color:$black; }
+            &:hover, &:active { background:rgba(#fff, 95%); border-color:transparent; }
+        }
+    }
+    
+    &.btn-sm { padding:4px 8px!important; }
+    
+    &.btn-big { padding:$btn-big!important; }
+    
+    &.btn-noborder { border-color:transparent!important; }
+    
+    &.btn-disabled, &[disabled],
+        &.btn-disabled:hover, &[disabled]:hover,
+        &.btn-disabled:active, &[disabled]:active { cursor:not-allowed!important; opacity:1; }
+}
+
+.btn-group {
+    & .btn { padding:$btn; @include text-btn; line-height:100%!important; color:$black; background:#fff; }
+    & .btn:hover, & .btn:active { background:$black; border-color:$black; color:#fff; }
+    & .btn.active { 
+        & { background:$black; color:#fff; }
+        &:hover, &:active { background:rgba($black, 80%); border-color:transparent; }
+    }
+    
+    & .btn-blue {
+        & { background:transparent; border:2px solid $blue; }
+        &:hover, &:active { background:$blue; border-color:$blue; color:#fff; }
+        &.active { 
+            & { background:$blue; color:#fff; }
+            &:hover, &:active { background:lighten($blue, 5%); border-color:transparent; }
+        }
+    }
+    & .btn:not(:last-child) { border-right:1px solid transparent; }
+    // & .btn-check:checked+.btn, & .active+.btn, & .btn.dropdown-toggle.show { padding:$btn; background:$black!important; color:#fff!important; }
+    & .btn-check:active+.btn, & .btn-check:checked+.btn, & .btn.dropdown-toggle.show { padding:$btn; background:$black!important; color:#fff!important; }
+}
+
+.custom-select {
+    & { padding:10px 0 7px 0; color:$black; background:transparent; width:100%; @include text-big; line-height:100%!important; border:none; border-radius:0; border-bottom:2px solid $black; cursor:pointer; }
+    &:focus { border-color:$black; box-shadow:none; }
+    &:invalid { color:rgba($black, .4); }
+    
+    &.with-arrow-right { padding-right:20px; background:url('#{$i}/icon/arrow.svg') center right no-repeat; }
+    &.with-arrow { @include text-normal; border-bottom:none; width:auto; padding:5px 0; padding-left:20px; line-height:110%!important; background:url('#{$i}/icon/arrow.svg') center left no-repeat; }
+}
+
+.form-switch {
+    & { min-height:20px!important; }
+    & .form-check-input { border-radius:14px; width:40px; height:20px; }
+    & .form-check-input:checked { background-color:$blue; border-color:$blue; }
+}
+
+.form-floating {
+    & > .form-control { padding:5px 0!important; height:auto; }
+    & > label { padding:0!important; top:12px; color:$grey; @include text-normal; height:auto; }
+    & > .form-control:focus~label,
+        & > .form-control:not(:placeholder-shown)~label,
+        & > .form-select~label { transform: scale(.95) translateY(2.3rem); opacity:1!important; }
+}

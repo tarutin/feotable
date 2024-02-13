@@ -1,0 +1,484 @@
+@charset "UTF-8";
+
+* { outline:none!important; -webkit-appearance:none!important; box-shadow:none; }
+
+html, body { padding:3rem; height:auto; margin:0 auto; color:#000; -webkit-tap-highlight-color:transparent; -webkit-font-smoothing:antialiased; font-smooth:always; text-rendering:optimizeLegibility; }
+body { background:#fff; }
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap");
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+}
+
+.app .feotable .sticky {
+  left: 280px;
+}
+
+.feotable {
+  font-size: 14px;
+  line-height: 100% !important;
+  border-spacing: 0px;
+  border-radius: 4px;
+  border: 0px;
+  border-collapse: separate;
+  margin-bottom: 0px;
+  page-break-inside: auto;
+}
+.feotable {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font‑display: swap;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+}
+.feotable .bold, .feotable .bold *, .feotable b, .feotable strong, .feotable th, .feotable th * {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font‑display: swap;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+}
+.feotable tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+.feotable .sticky {
+  box-shadow: 15px 0 15px -15px rgba(69, 74, 89, 0);
+}
+.feotable .sticky.stuck {
+  box-shadow: 15px 0 15px -15px rgba(69, 74, 89, 0.3);
+}
+.feotable.mini {
+  width: 100%;
+}
+.feotable.mini thead th {
+  width: auto !important;
+  min-width: auto !important;
+}
+.feotable thead th {
+  background-color: #454A59;
+  color: #fff;
+  padding: 13px 10px;
+  font-weight: 700;
+  border: 1px solid rgba(84, 88, 100, 0.3);
+  vertical-align: middle;
+  position: sticky;
+  z-index: 2;
+  top: 56px;
+}
+.feotable thead th.center {
+  text-align: center !important;
+}
+.feotable thead th.left {
+  text-align: left !important;
+}
+.feotable thead th.right {
+  text-align: right !important;
+}
+.feotable thead th.sticky {
+  text-align: left;
+  border-right: 2px solid rgba(84, 88, 100, 0.3);
+  position: sticky;
+  z-index: 3;
+}
+@media only screen and (max-width: 576px) {
+  .feotable thead th.sticky {
+    position: static;
+  }
+}
+.feotable tbody {
+  border: 0;
+}
+.feotable tbody tr.level-2 td {
+  background-color: white;
+  border-color: #e2e8ed !important;
+}
+.feotable tbody tr.level-2 td:nth-child(1) {
+  padding-left: 36px;
+}
+.feotable tbody tr.level-3 td {
+  background-color: #fff;
+  border-color: #e2e8ed !important;
+}
+.feotable tbody tr.level-3 td:nth-child(1) {
+  padding-left: 48px;
+}
+.feotable tbody tr.bg-blue td {
+  background-color: #34B1E2;
+  color: #fff !important;
+  border-color: rgba(148, 207, 234, 0.3) !important;
+}
+.feotable tbody tr.bg-blue td .red {
+  color: #fff !important;
+}
+.feotable tbody tr.bg-blue td .empty {
+  color: #fff !important;
+}
+.feotable tbody tr.bg-black td {
+  background-color: #454A59;
+  color: #fff !important;
+  border-color: rgba(84, 88, 100, 0.3) !important;
+}
+.feotable tbody tr.bg-black td .red {
+  color: #fff !important;
+}
+.feotable tbody tr.bg-grey td, .feotable tbody tr.bg-grey th {
+  background-color: #f6f8fa;
+  border-color: #e2e8ed !important;
+}
+.feotable tbody tr.open-level td.sticky {
+  cursor: pointer;
+}
+.feotable tbody tr.open-level td.sticky::before {
+  transform: rotate(-90deg);
+  content: "";
+  background-image: url("/img/icon/chevron-down.svg");
+  width: 10px;
+  height: 10px;
+  margin-top: -3px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.feotable tbody tr.open-level.opened td.sticky::before {
+  transform: rotate(0deg);
+}
+.feotable tbody td {
+  background-color: #f6f8fa;
+  padding: 10px;
+  color: #454A59;
+  vertical-align: middle;
+  border-bottom: 1px solid #e2e8ed;
+}
+.feotable tbody td.selected {
+  background-color: #ecf8fc !important;
+}
+.feotable tbody td.preselect:not(.select) {
+  background-color: #ecf8fc !important;
+}
+.feotable tbody td:last-child {
+  border-right: 1px solid #e2e8ed;
+}
+.feotable tbody td.sticky {
+  text-align: left;
+  border-left: 1px solid #e2e8ed;
+  position: sticky;
+  background-color: #f6f8fa;
+  z-index: 1;
+  border-right: 2px solid #e2e8ed;
+}
+@media only screen and (max-width: 576px) {
+  .feotable tbody td.sticky {
+    position: static;
+  }
+}
+.feotable tbody td .block {
+  display: flex;
+  flex-direction: row;
+}
+.feotable tbody td .block .counter {
+  margin-right: 10px;
+  color: #a1a4ab;
+}
+.feotable tbody td.num, .feotable tbody td.right, .feotable tbody td.num input, .feotable tbody td.percent, .feotable tbody td.percent input {
+  text-align: right !important;
+}
+.feotable tbody td.percent::after {
+  content: "%";
+  color: #a1a4ab;
+  margin-left: 2px;
+}
+.feotable tbody td.date, .feotable tbody td.date input {
+  text-align: center !important;
+}
+.feotable tbody td.center {
+  text-align: center !important;
+}
+.feotable tbody td.left {
+  text-align: left !important;
+}
+.feotable tbody td.grey {
+  color: #a1a4ab;
+}
+.feotable tbody td .red {
+  color: #454A59 !important;
+}
+.feotable tbody td .empty {
+  color: #a1a4ab;
+}
+.feotable tfoot tr.bg-black td, .feotable tfoot tr.bg-black th, .feotable tfoot tr.bg-grey td, .feotable tfoot tr.bg-grey th {
+  background-color: #f6f8fa;
+  color: #454A59;
+  border-color: #e2e8ed;
+}
+.feotable tfoot th {
+  background-color: #34B1E2;
+  color: #fff;
+  padding: 13px 10px;
+  font-weight: 700;
+  border: 1px solid rgba(148, 207, 234, 0.3);
+  vertical-align: middle;
+}
+.feotable tfoot th.num, .feotable tfoot th.right, .feotable tfoot th.percent {
+  text-align: right;
+}
+.feotable tfoot th.center {
+  text-align: center;
+}
+.feotable tfoot th.left {
+  text-align: left;
+}
+.feotable tfoot th .red {
+  color: #fff !important;
+}
+.feotable tfoot th .empty {
+  color: #fff !important;
+}
+.feotable tfoot th.sticky {
+  text-align: left;
+  border-right: 2px solid rgba(148, 207, 234, 0.3);
+  position: sticky;
+  background-color: #34B1E2;
+}
+@media only screen and (max-width: 576px) {
+  .feotable tfoot th.sticky {
+    position: static;
+  }
+}
+.feotable > *:first-child > tr:first-child {
+  border-radius: 4px 4px 0 0;
+}
+.feotable > *:first-child > tr:first-child > *:first-child {
+  border-radius: 4px 0 0 0;
+}
+.feotable > *:first-child > tr:first-child > *:last-child {
+  border-radius: 0 4px 0 0;
+}
+.feotable > *:last-child > tr:last-child {
+  border-radius: 0 0 4px 4px;
+}
+.feotable > *:last-child > tr:last-child > *:first-child {
+  border-radius: 0 0 0 4px;
+}
+.feotable > *:last-child > tr:last-child > *:last-child {
+  border-radius: 0 0 4px 0;
+}
+
+.output .feotable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.output .feotable thead th.sticky {
+  width: 300px;
+  min-width: 300px;
+}
+.output .feotable thead th:nth-child(n+2) {
+  width: 90px;
+  min-width: 90px;
+  text-align: right;
+}
+.output .feotable tbody td:nth-child(n+2) {
+  white-space: nowrap;
+  text-align: right;
+}
+.output .feotable tfoot th:nth-child(n+2) {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.enter .feotable thead th.sticky {
+  width: 300px !important;
+  min-width: 300px !important;
+}
+.enter .feotable thead th:nth-child(n+2) {
+  width: 120px;
+  min-width: 120px;
+}
+.enter .feotable tbody tr.ui-state-highlight td:last-child {
+  display: none;
+}
+.enter .feotable tbody tr.ui-sortable-helper td {
+  background-color: #ecf8fc !important;
+  width: 120px;
+}
+.enter .feotable tbody tr.nowrap td {
+  white-space: normal !important;
+}
+.enter .feotable tbody tr .feotabletools {
+  height: auto;
+  padding: 6px;
+  position: absolute;
+  z-index: 30;
+  margin-left: 285px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.25) !important;
+}
+.enter .feotable tbody tr .feotabletools span {
+  margin: 0 2px;
+}
+.enter .feotable tbody tr .feotabletools .add {
+  cursor: pointer;
+}
+.enter .feotable tbody tr .feotabletools .remove {
+  cursor: pointer;
+}
+.enter .feotable tbody tr .feotabletools .sort {
+  cursor: move;
+}
+.enter .feotable tbody tr td {
+  border: 1px solid transparent;
+  border-bottom: 1px solid #e2e8ed;
+  background-color: #fff;
+}
+.enter .feotable tbody tr td.sticky {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+  width: 300px !important;
+  min-width: 300px !important;
+  border-bottom: 1px solid #e2e8ed;
+  border-left: 1px solid #e2e8ed;
+  border-right: 2px solid #e2e8ed;
+}
+.enter .feotable tbody tr td:nth-child(n+2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+  border-bottom: 1px solid #e2e8ed;
+  border-right: 1px solid #e2e8ed;
+}
+.enter .feotable tbody tr td.focus {
+  padding: 0px;
+}
+.enter .feotable tbody tr td.noedit:not(.add-tpl-spacer) {
+  color: rgba(69, 74, 89, 0.7);
+  background-color: #f6f8fa;
+}
+.enter .feotable tbody tr td.wrong {
+  border: 1px solid #D12F6D !important;
+}
+.enter .feotable tbody tr td.wrong + .wrong {
+  border-left: 0 !important;
+}
+.enter .feotable tbody tr td.input {
+  height: 33px;
+}
+.enter .feotable tbody tr td.input:hover { /*background-color:$table-select!important;*/
+  cursor: pointer;
+}
+.enter .feotable tbody tr td.input:focus-within {
+  background-color: #ecf8fc !important;
+  border-color: #34B1E2 !important;
+}
+.enter .feotable tbody tr td.input input {
+  width: 120px !important;
+  min-width: 120px !important;
+  background: transparent;
+  font-size: 14px;
+  line-height: 100% !important;
+  margin: 0px;
+  padding: 0 11px;
+  border: 1px solid transparent;
+  color: #454A59;
+}
+.enter .feotable tbody tr td.input input {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font‑display: swap;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+}
+.enter .feotable tbody tr td.input input .bold, .enter .feotable tbody tr td.input input .bold *, .enter .feotable tbody tr td.input input b, .enter .feotable tbody tr td.input input strong, .enter .feotable tbody tr td.input input th, .enter .feotable tbody tr td.input input th * {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font‑display: swap;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+}
+.enter .feotable tbody tr td.sticky.input input {
+  width: 300px !important;
+  min-width: 300px !important;
+  padding: 0 9px;
+  border-right: 2px solid transparent !important;
+}
+.enter .feotable tbody tr td.select, .enter .feotable tbody tr td.select.focus {
+  position: relative;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.enter .feotable tbody tr td.select:hover {
+  background-color: #ecf8fc !important;
+  cursor: pointer;
+  padding-right: 0;
+}
+.enter .feotable tbody tr td.select:not(:hover):after {
+  content: "▾";
+  color: #454A59;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.enter .feotable tbody tr td.select select {
+  background: none;
+  padding: 0 10px 0 10px; /* padding:3px 10px;*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 100% !important;
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+.enter .feotable tbody tr td.select select {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font‑display: swap;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+}
+.enter .feotable tbody tr td.select select .bold, .enter .feotable tbody tr td.select select .bold *, .enter .feotable tbody tr td.select select b, .enter .feotable tbody tr td.select select strong, .enter .feotable tbody tr td.select select th, .enter .feotable tbody tr td.select select th * {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font‑display: swap;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+}
+.enter .feotable tfoot th:nth-child(n+2) {
+  white-space: nowrap;
+}
+
+.project .feotablesummary {
+  height: auto;
+  padding: 7px;
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  z-index: 30;
+  border-radius: 4px;
+  background: #454A59;
+  color: #fff;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.25) !important;
+}
+.project .feotablesummary span {
+  margin: 0 10px;
+}

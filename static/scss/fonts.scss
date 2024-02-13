@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap');
+@include font-face('Normalidad Compact Regular', normalidad/Normalidad-Compact_Regular_web, normal);
+@include font-face('Normalidad Compact Medium', normalidad/Normalidad-Compact_Medium_web, normal);
+@include font-face('Normalidad Compact Bold', normalidad/Normalidad-Compact_Bold_web, bold);
+@include font-face('Normalidad Extended Bold', normalidad/Normalidad-Extended_Bold_web, bold);
+// @include font-face('Normalidad Text Medium', normalidad/Normalidad-Text_Medium_web, normal);
+
+@mixin font-opensans { font-family:'Open Sans', sans-serif; font-weight:normal; font‑display:swap; }
+@mixin font-regular { font-family:'Normalidad Compact Regular', sans-serif; font-weight:normal; }
+@mixin font-medium { font-family:'Normalidad Compact Medium', sans-serif; font-weight:normal; }
+@mixin font-bold { font-family:'Normalidad Compact Bold', sans-serif; font-weight:normal; }
+@mixin font-extended-bold { font-family:'Normalidad Extended Bold', sans-serif; font-weight:bold; line-height:94%; }
+@mixin font-awesome { font-family: 'Font Awesome 6 Free'; font-weight:400; }
+// @mixin font-text-medium { font-family:'Normalidad Text Medium', sans-serif; font-weight:normal; }
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';

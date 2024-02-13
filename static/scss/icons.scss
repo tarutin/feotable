@@ -1,0 +1,12 @@
+
+.icon {
+    & { display:inline-block; width:30px; height:30px; vertical-align:middle; background-position:center center; background-repeat:no-repeat; }
+    &.icon-sm { width:24px; height:24px; }
+    &.icon-md { width:48px; height:48px; }
+    &.icon-cover { background-size:cover; }
+    &:not(.no-hover):hover { background-color:rgba($black, 5%); cursor:pointer; border-radius:$radius; }
+
+    @each $name in $icons {
+        &.#{$name} { background-image:url('#{$i}/icon/#{$name}.svg'); }
+    }
+}

@@ -1,0 +1,66 @@
+.app {
+    & { display:flex; flex-direction:row; }
+    &:not(.appproject) { 
+        & { background-color:$grey-light; }
+        & header { border-bottom-color:rgba($black, .1); }
+    }
+    & > header {
+        & { position:fixed; top:0; left:0; z-index:3; width:100%; @include hspace-big; @include flex-row; height:$topnav-height; background:#fff; border-bottom:1px solid $grey-light; }
+        & .start { }
+        & .end {
+            & { @include flex-row; }
+            & > * {
+                & { display:inline-block; }
+                &:not(:last-child) { margin-right:10px; }
+            }
+            & .profile {
+                & { width:300px; right:54px; top:64px; animation-duration:.2s; }
+                & .item { display:block; padding:10px 13px; border-radius:$radius-big; }
+                & .item:hover { background:$blue-light; }
+            }
+            & .profile-avatar { border-radius:50%; }
+            & .profile-abbr { display:inline-block; border-radius:50%; padding-top:5px; width:30px; height:30px; border:2px solid $blue; vertical-align:middle; text-align:center; }
+        }
+    }
+    & > aside, & > main { display:flex; flex-direction:column; }
+    & > aside { 
+        & { flex:0 0 $aside-width; width:$aside-width; padding-top:$topnav-height; margin-bottom:auto; background:$aside-color; position:fixed; top:0; left:0; bottom:0; z-index:2; height:100%; min-height:-webkit-fill-available; overflow-x:hidden; /*white-space:nowrap;*/ }
+        & nav { 
+            & { padding:10px; position:relative; overflow:hidden; display:flex; flex-direction:column; width:$aside-width; height:100%; min-height:-webkit-fill-available; }
+            & .foot { padding-top:10px; margin-top:10px; border-top:1px solid rgba($black, .1); }
+            & .nav0 > .item { margin-left:30px; color:rgba($black, .75); }
+            & .nav1 > .item { margin-left:47px; color:rgba($black, .75); }
+            & .item {
+                & { display:block; padding:10px 13px; margin:5px 0; border-radius:$radius-big; }
+                &.active { background-color:$aside-color-active; color:$blue; @include font-medium; }
+                &.opened { color:$black; }
+                &:not(.no-hover):hover { background-color:$aside-color-hover; }
+                
+                & .fa-chevron-down { position:relative; top:8px; }
+                &.opened > .fa-chevron-down { transform:rotate(-180deg); }
+            }
+        }
+    }
+    & > main { 
+        & { flex:1 0 0px; width:100vw; padding-left:$aside-width; margin-top:$topnav-height; position:relative; z-index:1; /*height:100%; min-height:-webkit-fill-available;*/ }
+    }
+    &.appproject {
+        $sticky-right-margin: $aside-width + 17/*scroll*/ + (54 * 2);
+        & main { width:auto; }
+        & main section > .sticky { position:sticky; display:block; width:calc(100vw - #{$sticky-right-margin}); left:$aside-width + 54px; }
+    }
+    &.no-main-header {
+        & > header { display:none; }
+        & > main { margin-top:0; }
+    }
+    &.hide-x-scroll {
+        & { overflow-x:hidden; }
+    }
+    &.auth-center {
+        &.app-en { background:fixed url('#{$i}/bg/signin-dashboard-en.png') 0% 0% no-repeat; background-size:cover; }
+        &.app-de { background:fixed url('#{$i}/bg/signin-dashboard-de.png') 0% 0% no-repeat; background-size:cover; }
+        &.app-en.signin-bg-input { background-image:url('#{$i}/bg/signin-input-en.png'); }
+        &.app-de.signin-bg-input { background-image:url('#{$i}/bg/signin-input-de.png'); }
+        &::after { content:''; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(0, 0, 0, .4); @include backdrop(5px); }
+    }
+}

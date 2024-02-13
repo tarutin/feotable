@@ -1,0 +1,90 @@
+// paths
+$i: '/img';
+$f: '/fonts';
+$fa-font-path: "/fonts/fontawesome";
+
+// icons
+$icons: 'close', 'close-red', 'double-arrow', 'arrow', 'logout', 'add-circle', 'infinity',
+        'check', 'check-blue', 'check-circle-blue', 'edit', 'done',
+        'users', 'modules', 'lock-open', 'dashboard', 'settings',
+        'input', 'outputd', 'export', 'birdview', 'add-square-blue', 'vbars-blue', 'trash-blue', 'trash-black',
+        'spinner-white', 'import-black', 'export-black', 'save-white',
+        'chevron-down', 'chevron-left-white', 'chevron-left-black', 'chevron-right-white',
+        'google', 'google-sign', 'linkedin-sign', 'yandex', 'vk', 'facebook', 'pdf', 'ppt', 'doc', 'xls', 'play';
+
+// colors
+$red: #D12F6D;
+$red-light: #f5dfe7;
+$black: #454A59;
+$blue: #34B1E2;
+$blue-light: #ecf8fc;
+$grey: #a1a4ab;
+$grey-light: #f6f8fa;
+$green: #2fd166;
+
+$table-head: $black;
+$table-head-border: rgba(84, 88, 100, .3);
+$table-body: $grey-light;
+$table-body-border: #e2e8ed;
+$table-foot: $blue;
+$table-foot-border: rgba(148, 207, 234, .3);
+$table-name-width: 300px;
+$table-other-width: 90px;
+$table-enter-other-width: 120px;
+$table-select: $blue-light;
+
+$aside-color: $grey-light;
+$aside-color-active: rgba($blue, .2);
+$aside-color-hover: rgba($black, .1);
+// $aside-color-active-2lvl: $aside-color-active;
+// $aside-color-active-3lvl: $aside-color-active;
+
+// sizes
+$lg: 992px;
+$sm: 576px;
+$xl: 1200px;
+$font-size: 14px;
+$line-height: 17px;
+$radius: 4px;
+$radius-big: 8px;
+$aside-width: 280px;
+$btn: 8px 13px;
+$btn-big: 16px 40px;
+$table-size: $font-size;
+$topnav-height: 56px;
+
+// mixin
+@mixin space { padding:29px 21px; }
+@mixin hspace { padding-left:21px; padding-right:21px; }
+@mixin space-big { padding:28px 54px; }
+@mixin hspace-big { padding-left:54px; padding-right:54px; }
+@mixin flex-row { display:flex; align-items:center; justify-content:space-between; flex-direction:row; }
+@mixin text-table {
+    & { @include font-opensans; font-size:$font-size; line-height:$line-height; font-weight:500; }
+    & .bold, & .bold *, & b, & strong, & th, & th * { @include font-opensans; font-size:$font-size; line-height:$line-height; font-weight:700; }
+}
+@mixin text-normal { @include font-regular; font-size:$font-size; line-height:$line-height; font-weight:500; }
+@mixin text-nav { @include font-medium; font-size:14px; line-height:19px; font-weight:normal; }
+@mixin text-btn { @include font-medium; font-size:$font-size; line-height:$line-height; }
+@mixin text-big { @include font-regular; font-size:16px; line-height:18px; }
+@mixin text-caption { @include font-medium; font-weight:400; font-size:10px; line-height:12px; } // { @include font-regular; font-size:11px; line-height:15px; }
+@mixin text-small { @include font-regular; font-size:12px; line-height:20px; letter-spacing:0.1px; }
+@mixin text-muted { color:$grey!important; } // #6c757d
+@mixin shadow($size: 35px) { box-shadow:0px 0px $size rgba(0, 0, 0, 0.25)!important; }
+@mixin backdrop($blur: 5px) { -webkit-backdrop-filter: saturate(180%) blur($blur); backdrop-filter: saturate(180%) blur($blur); }
+@mixin transition($args...) {
+    @if length($args) < 1 { transition: all .1s ease-in-out; }
+    @each $for in $args { transition: $for .1s ease-in-out; }
+}
+@mixin clearfix {
+    & { zoom:1; }
+    &:before, &:after { content:''; display:table; }
+    &:after { clear:both; }
+}
+@mixin font-face($font-family, $path, $weight: normal, $style: normal) {
+    @font-face {
+    	font-family: $font-family; font-weight: $weight; font-style: $style; font‑display: swap;
+    	src: url('#{$f}/#{$path}.eot');
+    	src: url('#{$f}/#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$f}/#{$path}.woff') format('woff'), url('#{$f}/#{$path}.woff2') format('woff2'), url('#{$f}/#{$path}.ttf') format('truetype');
+    }
+}

@@ -1,0 +1,13 @@
+.feofeedback {
+    & { position:fixed; bottom:0; right:0; z-index:10; }
+    & .button { 
+        & { position: relative; margin: 15px; height: 46px; border-radius: 23px; @include shadow; background: #fff; cursor: pointer; display: flex; align-items: center; }
+        & .button-icon { width: 46px; height: 46px; opacity: 1; background: url('#{$i}/icon/chat.svg') center no-repeat; background-size:25px 25px; flex: none; margin-left: 0; transition: margin-left .2s ease; }
+        & .button-text { max-width: 0; opacity: 0; margin-right: 0; transition: all .2s ease; white-space: nowrap; overflow: hidden; }
+        &:hover {
+            & .button-icon { margin-left:10px; }
+            & .button-text { max-width:320px; opacity:1; margin-right:20px; }
+        }
+    }
+    & .feedback { @include shadow; background-color:#fff; margin:25px; }
+}
